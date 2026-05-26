@@ -1,96 +1,168 @@
-# NCI Dose Tools Repository
-
-NCI Dose Tools are a suite of radiation dose estimation software tools developed at the National Cancer Institute (NCI) for CT, nuclear medicine, and radiography/fluoroscopy procedures. They support standardized organ dose assessment using computational phantoms and precomputed dose libraries for research use and licensed vendor integration.
-
-This repository is maintained by the NCI Dose Team and provides documentation, user support, release information, and API resources for NCICT, NCINM, and NCIRF.
-
----
-
-## Software Access
-
-### 🔒 Authorized Access Required
-
-[**DOWNLOAD SOFTWARE**](https://drive.google.com/drive/folders/1B2cI9eewJzRn5DJMaOGJ1RloNv0blxSF?usp=share_link)
-
-Access to the NCI Dose Tools is provided to authorized users under one of the following agreements:
-
-- An approved [**Software Transfer Agreement (STA)**](https://dceg.cancer.gov/tools/radiation-dosimetry-tools/ncidose-software-transfer-agreement.pdf)  
-  *(free of charge for non-commercial research use)*, or
-
-- A completed **commercial licensing agreement**  
-  *(for vendor or product integration use)*
-
-Unapproved access, redistribution, or derivative use is not permitted.
-
----
-
-## NCI Dose Tools
-
-<img width="410" height="132" alt="image" src="https://github.com/user-attachments/assets/7ca3c5db-9803-4e1c-9c7a-c21d0113b87b" />
-
-Reference organ dose estimation for pediatric, adult, and pregnant patient
-populations undergoing CT examinations.
-
-[Documentation](NCICT) · [Manual](https://github.com/ncidosimetry/ncidosetools/wiki/NCICT-User-Manual) · [API](RESTAPI/NCICT_API)
-
----
-
 <img width="397" height="119" alt="image" src="https://github.com/user-attachments/assets/7dc47e5b-ea40-4e7d-883a-2997978b921e" />
 
-Reference organ dose estimation for pediatric and adult populations undergoing
-nuclear medicine procedures.
+## Download
 
-[Documentation](NCINM) · [Manual](https://github.com/ncidosimetry/ncidosetools/wiki/NCINM-User-Manual) · [API](RESTAPI/NCINM_API)
+### [DOWNLOAD LINK](https://drive.google.com/drive/folders/1B2cI9eewJzRn5DJMaOGJ1RloNv0blxSF?usp=share_link)
 
----
+Access to the download link is restricted to users with:
+- an approved **Software Transfer Agreement (STA)** for non-commercial research use, or  
+- a completed **commercial licensing agreement**.
 
-<img width="417" height="126" alt="image" src="https://github.com/user-attachments/assets/b60697e2-9359-4073-a76f-fb9e6ba07e13" />
-
-Reference organ dose estimation for pediatric and adult populations undergoing
-radiographic and fluoroscopic procedures.
-
-[Documentation](NCIRF) · [Manual](https://github.com/ncidosimetry/ncidosetools/wiki/NCIRF-User-Manual) · [API](RESTAPI/NCIRF_API)
+Unlicensed access or redistribution is not permitted.
 
 ---
 
-<img width="385" height="129" alt="image" src="https://github.com/user-attachments/assets/6953bc8e-3627-48f9-b930-8c3b35106315" />
+## Available Resources
 
-Computational human phantom libraries representing reference and body-size–
-dependent children, adults, and pregnant women used across NCI dose tools.
+The following resources are available from the download link:
 
-[Documentation](PHANTOM) · [Manual](https://github.com/ncidosimetry/ncidosetools/wiki/PHANTOM-User-Manual)
-
----
-
-## Non-Commercial Research Use
-
-NCI dose tools are available **at no cost** for non-commercial research use
-under an approved **Software Transfer Agreement (STA)**.
-
-**To request access:**
-1. Complete the [STA form](https://dceg.cancer.gov/tools/radiation-dosimetry-tools/ncidose-software-transfer-agreement.pdf)  
-2. Obtain required signatures  
-3. Submit the completed form to:
-
-**Dr. Choonsik Lee**  
-choonsik.lee@nih.gov  
-Lead Architect
+- `NCINM3.20260510_XXXXXXXX_mac.dmg`
+- `NCINM3.20260510_XXXXXXXX_windows.exe`
+- `NCINM3.20260510` user manual
+- `NCINM3.20260510 API` user manual
+- Recommended citation: **NCINM1**  
+- Recommended citation: **NCINM2**
 
 ---
 
-## Commercial Use
+## Version History
 
-Commercial use of NCI dose tools requires a licensing agreement through the
-**NCI Technology Transfer Center**.
+### 2026-5-10 — Official Release (Version 2.0.20241215)
 
-Vendors may request:
-- Evaluation access  
-- Commercial runtime licensing  
-- API integration licensing  
+**GUI**
+- Expanded the radionuclide S-value library to **1070 radionuclides** based on
+  photon and electron emissions from **ICRP Publication 107**.
+- Added a fetus phantom library with gestational ages of **8, 10, 15, 20, 25,
+  30, 35, and 38 weeks**.
+- Added mother-to-fetus SAF-based S values for maternal source regions and
+  fetal target organs.
+- Added fetal target-organ masses and maternal source-region volumes, including
+  placenta and amniotic fluid source regions.
+- Updated high quality phantom display views, including fetus phantom views for the new gestational ages.
+- Updated the radionuclide menu and standardized radiopharmaceutical name
+  loading.
+- Sped up performance through backend optimization.
+- Updated source and target listboxes with header rows, adjusted column widths,
+  and automatic shading for source rows with non-zero residence time.
+- Kept the Radiopharmaceutical tab blank for fetus phantom calculations because
+  pregnancy-specific radiopharmaceutical biokinetic models are not currently
+  defined. Fetus calculations should use the Radionuclide tab with user-entered
+  maternal source-region data.
 
-**To initiate the process, contact:**
+**Batch Manager**
+- Added a Batch Manager for CSV-based dose calculations from the NCINM3 GUI.
+- Added radiopharmaceutical fuzzy matching for clinical-style names and common radionuclide notation variants such as `F-18`, `18F`, `Tc-99m`, and `99mTc`.
+- Added example batch input file `ncinmBatchInput.csv`.
+- Batch calculations use the same NCI and ICRP radiopharmaceutical workflow as
+  the API.
+- After reading a radiopharmaceutical name from the batch CSV, NCINM3
+  automatically matches it to the closest library entry using fuzzy matching.
+- Added nearest-age phantom matching
+- Batch output is saved as CSV and includes resolved input values,
+  radiopharmaceutical match information, and organ dose columns.
+- Updated dose output column names to use the `Dose` prefix, such as
+  `Dose Adipose`.
 
-**Dr. Kevin Chang**  
-kevin.chang@nih.gov  
-Licensing and Technology Transfer Officer  
-NCI Technology Transfer Center
+**API**
+- Added API radiopharmaceutical fuzzy matching for clinical-style names and
+  common radionuclide notation variants such as `F-18`, `18F`, `Tc-99m`, and
+  `99mTc`.
+- Updated API input to named JSON fields with common aliases for phantom library,
+  sex, age, radiopharmaceutical, and administered activity.
+- Expanded API output with `input`, `phantom_age_match`,
+  `radiopharmaceutical_match`, and `dose_mGy` JSON sections.
+- Added arbitrary patient-age matching to the nearest available NCINM phantom age
+  group.
+- After receiving a radiopharmaceutical name in JSON input, the API
+  automatically matches it to the closest library entry using fuzzy matching.
+- Documented that the API supports the NCI and ICRP radiopharmaceutical
+  workflow; fetus calculations are handled in the GUI through the Radionuclide
+  tab with user-entered maternal source-region data.
+- Added local API test file `_ncinm3api_test.http`.
+
+### 2024-12-15 — Official Release (Version 2.0.20241215)
+- Added links to the user manual and user forum.
+- Corrected radionuclide selection when switching radiopharmaceuticals.
+
+### 2024-01-24 — Official Release (Version 2.0.20240124)
+- Added biokinetic models developed for pediatric thyroid cancer patients
+  (Kwon et al., *Journal of Radiological Protection*, 2023).
+- Added biokinetic models developed for adult thyroid cancer patients
+  (Kwon et al., *Journal of Radiological Protection*, in press).
+- Removed biokinetic models derived from older ICRP Publications 53, 80, and 106
+  when updated data from **ICRP Publication 128** were available.
+
+### 2022-12-15
+- Corrected mismatches between radionuclides and radiopharmaceuticals.
+- Sorted radiopharmaceutical names alphabetically.
+- Revised the effective dose calculation algorithm.
+
+### 2022-12-14 — Official Release (Version 2.0.20221214)
+- Published NCINM 2.0:  
+  Villoing et al., *“Organ dose calculator for diagnostic nuclear medicine patients based on the ICRP reference voxel phantoms and biokinetic models,”*  
+  **Biomedical Physics & Engineering Express**, 9:015004 (2023).
+- Included blood mass in target-organ mass for ICRP pediatric and adult phantoms
+  when blood is the source region, consistent with **ICRP Publication 133**.
+- Extended biokinetic data to **230 radiopharmaceuticals**
+  (ICRP Publications 53, 80, 106, and 128).
+
+### 2022-11-09
+- Fixed issues related to radionuclide and radiopharmaceutical mismatches.
+- Enabled copy and paste by mouse dragging.
+
+### 2022-09-19
+- Updated adult gastrointestinal tract self- and cross-fire SAFs using
+  **ICRP Publication 133**.
+- Fixed an issue that prevented S-value export for ICRP phantoms.
+
+### 2022-05-12
+- Added biokinetic data for four additional radiopharmaceuticals.
+- Corrected ovary data issues in the ICRP 15-year-old female phantom.
+
+### 2022-04-20
+- Revised NCI phantom-based active marrow and endosteum SAFs and S values using
+  the latest dose response functions adopted by **ICRP Committee 2**.
+
+### 2022-03-29
+- Corrected logical errors in skeletal dose calculations.
+- Removed effective dose calculations based on ICRP Publication 60 tissue
+  weighting factors.
+- Added effective dose calculations using ICRP Publication 103 tissue weighting
+  factors to the target-organ dose values automatically copied to the clipboard.
+- Corrected blood-inclusive target organ mass values.
+- Extended biokinetic data to **101 radiopharmaceuticals**
+  (ICRP Publications 53, 80, and 106).
+
+### 2021-11-29
+- Implemented frontal images of ICRP voxel phantoms, replacing frontal images of
+  NCI hybrid phantoms.
+
+### 2021-11-13
+- Corrected the zero adipose mass issue for the ICRP newborn female phantom.
+- Fixed errors in the Windows installation file.
+- Revised the user interface to be more compact.
+
+### 2021-10-19
+- Added biokinetic data for a total of **62 radiopharmaceuticals**.
+- Added User Manual and User Forum menu items under the **Help** menu.
+
+### 2021-05-15
+- Added blood mass to target organ mass in ICRP pediatric reference phantoms,
+  consistent with adult ICRP phantoms in **ICRP Publication 133**.
+
+### 2021-05-13 — Official Release (Version 2.0.20210301)
+- Added biokinetic models for 12 radiopharmaceuticals extracted from multiple
+  ICRP publications.
+- Added S values from the 12 ICRP reference pediatric and adult phantoms.
+
+### 2020-07-20
+- Published NCINM 1.0:  
+  Villoing et al., *“NCINM: organ dose calculator for patients undergoing nuclear medicine procedures,”*  
+  **Biomedical Physics & Engineering Express**, 6:055010 (2020).
+
+### 2020-03-12 — Official Release
+- Completed comprehensive benchmarking against **OLINDA/EXM 1.0** and **IDAC 2.1**.
+
+### 2019-08-22
+- Created NCINM 1.0 based on the 12 NCI reference phantoms.
+- Initiated alpha testing.
