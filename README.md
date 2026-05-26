@@ -18,8 +18,6 @@ The following resources are available from the download link:
 
 - `NCINM3.20260510_XXXXXXXX_mac.dmg`
 - `NCINM3.20260510_XXXXXXXX_windows.exe`
-- `NCINM3.20260510` user manual
-- `NCINM3.20260510 API` user manual
 - Recommended citation: **NCINM1**  
 - Recommended citation: **NCINM2**
 

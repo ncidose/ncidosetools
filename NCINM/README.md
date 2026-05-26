@@ -18,8 +18,6 @@ The following resources are available from the download link:
 
 - `NCINM3.20260510_XXXXXXXX_mac.dmg`
 - `NCINM3.20260510_XXXXXXXX_windows.exe`
-- `NCINM3.20260510` user manual
-- `NCINM3.20260510 API` user manual
 - Recommended citation: **NCINM1**  
 - Recommended citation: **NCINM2**
 
@@ -27,50 +25,57 @@ The following resources are available from the download link:
 
 ## Version History
 
-### 2026-5-10
+### 2026-5-10 — Official Release (Version 2.0.20241215)
+
+**GUI**
 - Expanded the radionuclide S-value library to **1070 radionuclides** based on
-  photon and electron emissions parsed from the **ICRP Publication 107**
-  radiation spectrum file.
+  photon and electron emissions from **ICRP Publication 107**.
 - Added a fetus phantom library with gestational ages of **8, 10, 15, 20, 25,
   30, 35, and 38 weeks**.
 - Added mother-to-fetus SAF-based S values for maternal source regions and
   fetal target organs.
 - Added fetal target-organ masses and maternal source-region volumes, including
   placenta and amniotic fluid source regions.
-- Updated `LibSValues` to include NCI, ICRP, and mother-to-fetus/fetus S-value
-  data.
-- Updated `LibPhantomViews` with fetus phantom views for the new gestational
-  ages.
+- Updated high quality phantom display views, including fetus phantom views for the new gestational ages.
+- Updated the radionuclide menu and standardized radiopharmaceutical name
+  loading.
+- Sped up performance through backend optimization.
+- Updated source and target listboxes with header rows, adjusted column widths,
+  and automatic shading for source rows with non-zero residence time.
 - Kept the Radiopharmaceutical tab blank for fetus phantom calculations because
   pregnancy-specific radiopharmaceutical biokinetic models are not currently
   defined. Fetus calculations should use the Radionuclide tab with user-entered
   maternal source-region data.
-- Reorganized runtime resources so compact CSV data remain embedded with the
-  project while large binary libraries are copied as application resources.
 
-### 2026-5-1
-- Reorganized the NCINM3 interface with separate NCI and ICRP phantom tabs, each
-  with its own sex and age controls to support future phantom-library expansion.
-- Updated the phantom display to load selected phantom images from the binary
-  `LibPhantomViews` runtime library and draw them to fill the display canvas.
-- Updated the radionuclide menu to load entries from `data_radionuclide.csv`
-  instead of GUI initial values.
-- Standardized radiopharmaceutical name and biokinetic data loading using
-  `data_biokinetic_20231219.csv`.
-- Converted S-value loading to a binary `LibSValues` library for faster startup
-  and smaller runtime data handling.
-- Added a reusable S-value library build workflow under `_library3.20260501`,
-  including the Python generator, README, and source `svalues*` files.
-- Updated source and target listboxes with header rows, adjusted column widths,
-  and automatic shading for source rows with non-zero residence time.
+**Batch Manager**
+- Added a Batch Manager for CSV-based dose calculations from the NCINM3 GUI.
+- Added radiopharmaceutical fuzzy matching for clinical-style names and common radionuclide notation variants such as `F-18`, `18F`, `Tc-99m`, and `99mTc`.
+- Added example batch input file `ncinmBatchInput.csv`.
+- Batch calculations use the same NCI and ICRP radiopharmaceutical workflow as
+  the API.
+- After reading a radiopharmaceutical name from the batch CSV, NCINM3
+  automatically matches it to the closest library entry using fuzzy matching.
+- Added nearest-age phantom matching
+- Batch output is saved as CSV and includes resolved input values,
+  radiopharmaceutical match information, and organ dose columns.
+- Updated dose output column names to use the `Dose` prefix, such as
+  `Dose Adipose`.
+
+**API**
+- Added API radiopharmaceutical fuzzy matching for clinical-style names and
+  common radionuclide notation variants such as `F-18`, `18F`, `Tc-99m`, and
+  `99mTc`.
 - Updated API input to named JSON fields with common aliases for phantom library,
   sex, age, radiopharmaceutical, and administered activity.
 - Expanded API output with `input`, `phantom_age_match`,
   `radiopharmaceutical_match`, and `dose_mGy` JSON sections.
 - Added arbitrary patient-age matching to the nearest available NCINM phantom age
   group.
-- Added API radiopharmaceutical matching for clinical-style names and common
-  radionuclide notation variants such as `F-18`, `18F`, `Tc-99m`, and `99mTc`.
+- After receiving a radiopharmaceutical name in JSON input, the API
+  automatically matches it to the closest library entry using fuzzy matching.
+- Documented that the API supports the NCI and ICRP radiopharmaceutical
+  workflow; fetus calculations are handled in the GUI through the Radionuclide
+  tab with user-entered maternal source-region data.
 - Added local API test file `_ncinm3api_test.http`.
 
 ### 2024-12-15 — Official Release (Version 2.0.20241215)
