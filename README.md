@@ -31,7 +31,7 @@ Unapproved access, redistribution, or derivative use is not permitted.
 Reference organ dose estimation for pediatric, adult, and pregnant patient
 populations undergoing CT examinations.
 
-[Documentation](NCICT) · [Manual](https://github.com/ncidosimetry/ncidosetools/wiki/NCICT-User-Manual) · [API](RESTAPI/NCICT_API)
+[Documentation](NCICT) · [Manual](https://github.com/ncidosimetry/ncidosetools/wiki/NCICT-User-Manual) · [API](https://github.com/ncidosimetry/ncidosetools/wiki/NCICTAPI-User-Manual)
 
 ---
 
@@ -40,7 +40,7 @@ populations undergoing CT examinations.
 Reference organ dose estimation for pediatric and adult populations undergoing
 nuclear medicine procedures.
 
-[Documentation](NCINM) · [Manual](https://github.com/ncidosimetry/ncidosetools/wiki/NCINM-User-Manual) · [API](RESTAPI/NCINM_API)
+[Documentation](NCINM) · [Manual](https://github.com/ncidosimetry/ncidosetools/wiki/NCINM-User-Manual) · [API](https://github.com/ncidosimetry/ncidosetools/wiki/NCINMAPI-User-Manual)
 
 ---
 
@@ -49,7 +49,7 @@ nuclear medicine procedures.
 Reference organ dose estimation for pediatric and adult populations undergoing
 radiographic and fluoroscopic procedures.
 
-[Documentation](NCIRF) · [Manual](https://github.com/ncidosimetry/ncidosetools/wiki/NCIRF-User-Manual) · [API](RESTAPI/NCIRF_API)
+[Documentation](NCIRF) · [Manual](https://github.com/ncidosimetry/ncidosetools/wiki/NCIRF-User-Manual) · [API](https://github.com/ncidosimetry/ncidosetools/wiki/NCIRFAPI-User-Manual)
 
 ---
 
