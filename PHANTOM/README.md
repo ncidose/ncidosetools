@@ -28,6 +28,9 @@ Unlicensed access or redistribution is not permitted.
 - **dicomrt/**
   DICOM-RT datasets for supported reference, pregnant, and ICRP phantom libraries.
 
+- **mc-input/**
+  Monte Carlo input files for selected phantom libraries. See **Monte Carlo Input Files** below.
+
 - **_archive/**
   Legacy binary voxel files and superseded release files retained for compatibility
   with previous workflows. Binary files were moved to `_archive` because NIfTI is now
@@ -35,6 +38,22 @@ Unlicensed access or redistribution is not permitted.
 
 - **_mastertable_ref&size.xlsx**
   Master data table for the NCI reference and body size–dependent phantom library.
+
+### Monte Carlo Input Files
+
+The **mc-input/** folder contains code-specific Monte Carlo input files for selected
+phantom libraries:
+
+- **mc-input/mcnp-nci-reference-arm/**
+  MCNP input decks for the NCI reference-size phantoms with arms. The folder includes
+  12 numbered input files (`01`–`12`) and 12 corresponding lattice files (`*.lat`).
+
+- **mc-input/geant4-icrp-noarm/**
+  Geant4 input package for ICRP reference phantoms without arms. The folder includes
+  `Ref_noa_icrp_bin_G4.tar.gz`.
+
+These files are provided for established Monte Carlo workflows and may require local
+path, source, scoring, compiler, or code-version adjustments before use.
 
 ### Phantom Library Naming Convention
 
@@ -60,6 +79,8 @@ Unlicensed access or redistribution is not permitted.
 | nci  | size-dependent | armless | niigz | high |
 | nci  | size-dependent | armless | niigz | low |
 | nci  | pregnant | arm | niigz | high |
+| nci  | reference | arm | mc-input (MCNP) | high |
+| icrp | reference | armless | mc-input (Geant4) | high |
 | nci  | reference | armless | dicomrt | high |
 | nci  | pregnant  | armless | dicomrt | high |
 | icrp | reference | armless | dicomrt | high |
