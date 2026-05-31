@@ -96,7 +96,7 @@ path, source, scoring, compiler, or code-version adjustments before use.
 
 ## Version History
 
-### **2026-05-31 — NIfTI (.nii.gz) Conversion**
+### **2026-05-31
 - Added compressed NIfTI (`.nii.gz`) versions of the NCI reference-size, size-dependent, and pregnant phantom libraries
 - Released the following NIfTI datasets through the download folder:
   - NCI reference-size phantoms with arms at high resolution
@@ -111,7 +111,7 @@ path, source, scoring, compiler, or code-version adjustments before use.
 - NIfTI (`.nii.gz`) is the recommended format for new downloads because it is smaller, includes header metadata, and can be read directly by common medical-imaging software
 - The raw binary file size previously made it impractical to release the full high-resolution NCI size-dependent phantom library (**n = 362**) through Google Drive; compressed NIfTI now makes this release practical
 
-### **2025-12-10 — Late-2025 NCI Phantom Library Update**
+### **2025-12-10 — Official Release**
 - Expanded anatomical detail across the NCI reference-size and body size–dependent phantom libraries
 - Added refined cardiac substructures, including heart chambers, myocardium, coronary arteries, cardiac valves, and conduction nodes
 - Incorporated the full **362-phantom** body size–dependent library, including the 11 small pediatric phantoms added in the 2024-01-27 update
