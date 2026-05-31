@@ -111,6 +111,14 @@ path, source, scoring, compiler, or code-version adjustments before use.
 - NIfTI (`.nii.gz`) is the recommended format for new downloads because it is smaller, includes header metadata, and can be read directly by common medical-imaging software
 - The raw binary file size previously made it impractical to release the full high-resolution NCI size-dependent phantom library (**n = 362**) through Google Drive; compressed NIfTI now makes this release practical
 
+### **2025-12-10 — Late-2025 NCI Phantom Library Update**
+- Expanded anatomical detail across the NCI reference-size and body size–dependent phantom libraries
+- Added refined cardiac substructures, including heart chambers, myocardium, coronary arteries, cardiac valves, and conduction nodes
+- Added **11 small pediatric phantoms** from newborn to 5 years of age, increasing the body size–dependent library from **351** to **362** phantoms
+- Unified the reference-size and body size–dependent organ master tables to improve consistency in organ definitions, IDs, and metadata
+- Recomputed voxel counts, organ volumes, and organ masses using a standardized workflow
+- Updated skeletal dose-response functions for marrow and endosteum dose estimation using the latest ICRP-approved data
+
 ### **2024-12-14 — Official Release**
 - Added **362 size-specific phantoms** voxelized at low resolution
 - Released DICOM-RT datasets (DICOM CT and RT STRUCTURE) for:
