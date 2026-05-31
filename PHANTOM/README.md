@@ -14,29 +14,57 @@ Unlicensed access or redistribution is not permitted.
 
 ## Available Resources from the Download Link
 
+### Download Folder Organization
+
+- **niigz/**
+  Compressed NIfTI (`.nii.gz`) voxel phantom files. The current NIfTI release includes:
+  - `nci_reference_arm_highres`
+  - `nci_pregnant_arm_highres`
+  - `nci_size_arm_highres`
+  - `nci_size_arm_lowres`
+  - `nci_size_armless_highres`
+  - `nci_size_armless_lowres`
+
+- **dicomrt/**
+  DICOM-RT datasets for supported reference, pregnant, and ICRP phantom libraries.
+
+- **_archive/**
+  Legacy binary voxel files and superseded release files retained for compatibility
+  with previous workflows. Binary files were moved to `_archive` because NIfTI is now
+  the recommended distribution format for voxel phantoms.
+
+- **_mastertable_ref&size.xlsx**
+  Master data table for the NCI reference and body size–dependent phantom library.
+
 ### Phantom Library Naming Convention
 
 **III_SSS_AAA_FFF_RRR**
 
 - **III (Institution)**: `ICRP`, `NCI`
-- **SSS (Size)**: `reference`, `bodysize`, `pregnant`
+- **SSS (Size)**: `reference`, `size`, `pregnant`
 - **AAA (Arm posture)**: `arm` (arms attached), `armless`
-- **FFF (File format)**: `binary`, `dicomrt`
+- **FFF (File format)**: `dicomrt`, `niigz` (NIfTI `.nii.gz`)
 - **RRR (Resolution)**: `high` (default if not indicated), `lowres`
 
 ### Available Phantom Libraries
 
 | Institution | Size      | Arm Posture | Format   | Resolution |
 |------------|-----------|-------------|----------|------------|
-| nci  | reference | arm     | voxel  | high |
-| nci  | reference | armless | voxel  | high |
-| nci  | size-dependent | arm | voxel  | low<sup>*</sup>|
-| nci  | size-dependent | armless | voxel | low<sup>*</sup>|
+| nci  | reference | arm     | binary (archive) | high |
+| nci  | reference | armless | binary (archive) | high |
+| nci  | size-dependent | arm | binary (archive) | low<sup>*</sup>|
+| nci  | size-dependent | armless | binary (archive) | low<sup>*</sup>|
+| nci  | reference | arm | niigz | high |
+| nci  | size-dependent | arm | niigz | high |
+| nci  | size-dependent | arm | niigz | low |
+| nci  | size-dependent | armless | niigz | high |
+| nci  | size-dependent | armless | niigz | low |
+| nci  | pregnant | arm | niigz | high |
 | nci  | reference | armless | dicomrt | high |
 | nci  | pregnant  | armless | dicomrt | high |
 | icrp | reference | armless | dicomrt | high |
 
-<sup>*</sup> The high–voxel-resolution NCI size-dependent library will be made available upon request, as its total file size exceeds the capacity of the current repository.
+<sup>*</sup> The high–voxel-resolution NCI size-dependent library is now available in compressed NIfTI (`.nii.gz`) format. Legacy binary voxel datasets have been moved to `_archive`.
 
 ### Master Table
 
@@ -46,6 +74,21 @@ Unlicensed access or redistribution is not permitted.
 ---
 
 ## Version History
+
+### **2026-05-31 — NIfTI (.nii.gz) Conversion**
+- Added compressed NIfTI (`.nii.gz`) versions of the NCI reference-size, size-dependent, and pregnant phantom libraries
+- Released the following NIfTI datasets through the download folder:
+  - NCI reference-size phantoms with arms at high resolution
+  - NCI pregnant woman phantoms at high resolution
+  - NCI size-dependent phantoms with arms at high resolution
+  - NCI size-dependent phantoms with arms at low resolution
+  - NCI size-dependent armless phantoms at high resolution
+  - NCI size-dependent armless phantoms at low resolution
+- The reference-size NIfTI dataset includes **12 phantoms**; the size-dependent NIfTI datasets each include **362 phantoms**; the pregnant NIfTI dataset includes **8 phantoms**
+- All NIfTI datasets preserve the voxelized organ-label data from the corresponding phantom library
+- Moved legacy binary voxel files to the **_archive** folder for compatibility with existing workflows
+- NIfTI (`.nii.gz`) is the recommended format for new downloads because it is smaller, includes header metadata, and can be read directly by common medical-imaging software
+- The raw binary file size previously made it impractical to release the full high-resolution NCI size-dependent phantom library (**n = 362**) through Google Drive; compressed NIfTI now makes this release practical
 
 ### **2024-12-14 — Official Release**
 - Added **362 size-specific phantoms** voxelized at low resolution
