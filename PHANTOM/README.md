@@ -82,7 +82,7 @@ path, source, scoring, compiler, or code-version adjustments before use.
 | nci  | reference | arm | mc-input (MCNP) | high |
 | icrp | reference | armless | mc-input (Geant4) | high |
 | nci  | reference | armless | dicomrt | high |
-| nci  | pregnant  | armless | dicomrt | high |
+| nci  | pregnant  | arm | dicomrt | high |
 | icrp | reference | armless | dicomrt | high |
 
 <sup>*</sup> The high–voxel-resolution NCI size-dependent library is now available in compressed NIfTI (`.nii.gz`) format. Legacy binary voxel datasets have been moved to `_archive`.
