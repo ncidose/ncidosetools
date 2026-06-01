@@ -55,15 +55,31 @@ phantom libraries:
 These files are provided for established Monte Carlo workflows and may require local
 path, source, scoring, compiler, or code-version adjustments before use.
 
-### Phantom Library Naming Convention
+### Folder Naming Convention
 
-**III_SSS_AAA_FFF_RRR**
+The download folder uses a top-level category folder first, followed by
+library-specific subfolders:
 
-- **III (Institution)**: `ICRP`, `NCI`
-- **SSS (Size)**: `reference`, `size`, `pregnant`
-- **AAA (Arm posture)**: `arm` (arms attached), `armless`
-- **FFF (File format)**: `dicomrt`, `niigz` (NIfTI `.nii.gz`)
-- **RRR (Resolution)**: `high` (default if not indicated), `lowres`
+- **niigz/III_SSS_AAA_RRR**
+  Compressed NIfTI (`.nii.gz`) folders, such as `niigz/nci_reference_arm_highres`.
+
+- **dicomrt/III_SSS_AAA_dicomrt_RRR**
+  DICOMRT folders, such as `dicomrt/nci_reference_armless_dicomrt_highres`.
+
+- **_archive/III_SSS_AAA_binary_RRR**
+  Archived legacy binary folders, such as `_archive/nci_reference_armed_binary_highres`.
+
+- **mc-input/**
+  Monte Carlo input folders use code-specific names, such as
+  `mcnp-nci-reference-arm` and `geant4-icrp-noarm`.
+
+Naming fields:
+
+- **III**: `nci` or `icrp`
+- **SSS**: `reference`, `size`, or `pregnant`
+- **AAA**: arm posture. NIfTI folders use `arm` or `armless`; DICOMRT and archived
+  binary folders use `armed` or `armless` where applicable.
+- **RRR**: `highres` or `lowres`
 
 ### Available Phantom Libraries
 
