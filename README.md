@@ -2,15 +2,15 @@
 
 NCI Dose Tools are a suite of radiation dose estimation software tools developed at the National Cancer Institute (NCI) for CT, nuclear medicine, and radiography/fluoroscopy procedures. They support standardized organ dose assessment using computational phantoms and precomputed dose libraries for research use and licensed vendor integration.
 
-This repository is maintained by the NCI Dose Team and provides documentation, user support, release information, and API resources for NCICT, NCINM, and NCIRF.
+This repository is maintained by the NCI Dose Team and provides technical documentation, user support, release information, and API resources for NCICT, NCINM, and NCIRF. The official NCI/DCEG information page should be used as the authoritative institutional source.
 
 ---
 
-## Website
+## Documentation Portal
 
-The public website source is maintained in [`website/`](website). Changes pushed
-to `main` under `website/` are built by GitHub Actions and deployed to GitHub
-Pages:
+The NCI Dose Tools Documentation Portal source is maintained in
+[`website/`](website). Changes pushed to `main` under `website/` are built by
+GitHub Actions and deployed to GitHub Pages:
 
 https://ncidosimetry.github.io/ncidosetools/
 
@@ -84,14 +84,16 @@ under an approved **Software Transfer Agreement (STA)**.
 
 **Dr. Choonsik Lee**  
 choonsik.lee@nih.gov  
-Lead Architect
+NCI Dose Tools Scientific Lead  
+Radiation Epidemiology Branch, DCEG, NCI
 
 ---
 
 ## Commercial Use
 
-Commercial use of NCI dose tools requires a licensing agreement through the
-**NCI Technology Transfer Center**.
+Commercial use, product integration, or vendor evaluation requires review
+through the **NCI Technology Transfer Center** and an appropriate licensing
+agreement.
 
 Vendors may request:
 - Evaluation access  

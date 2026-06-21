@@ -251,8 +251,8 @@ const Researchers = () => {
                   </a>
                   <div className="glass-card p-6 bg-primary/5 border-primary/20">
                     <p className="text-foreground font-medium mb-1">Dr. Choonsik Lee</p>
-                    <p className="text-sm text-muted-foreground">Senior Investigator, NCI</p>
-                    <p className="text-sm text-muted-foreground mb-3">Lead Developer, NCI Dose Tools</p>
+                    <p className="text-sm text-muted-foreground">NCI Dose Tools Scientific Lead</p>
+                    <p className="text-sm text-muted-foreground mb-3">Radiation Epidemiology Branch, DCEG, NCI</p>
                     <a 
                       href="mailto:choonsik.lee@nih.gov" 
                       className="text-primary hover:underline font-mono text-sm"

@@ -257,7 +257,7 @@ const Protocols = () => {
   useEffect(() => {
     let cancelled = false;
 
-    fetch(`${import.meta.env.BASE_URL}literature.json`, { cache: "no-store" })
+    fetch("/literature.json", { cache: "no-store" })
       .then((response) => {
         if (!response.ok) {
           throw new Error(`literature.json returned ${response.status}`);
@@ -314,7 +314,7 @@ const Protocols = () => {
               </p>
               <p className="mt-4 max-w-3xl text-muted-foreground leading-relaxed">
                 This page is intentionally high level. Detailed manuals, release notes,
-                and support discussions live in the GitHub technical portal.
+                and support discussions live in the documentation portal and GitHub repository.
               </p>
             </motion.div>
           </div>

@@ -26,7 +26,7 @@ export const Hero = () => {
             className="inline-flex items-center gap-2 text-xs font-mono text-primary uppercase tracking-widest"
           >
             <span className="w-2 h-2 bg-primary rounded-full animate-glow-pulse" />
-            Public Information Hub
+            Documentation & User Support
           </motion.div>
 
           <motion.h1
@@ -44,9 +44,9 @@ export const Hero = () => {
             transition={{ duration: 0.6, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
             className="mx-auto max-w-2xl text-lg text-muted-foreground"
           >
-            A public-facing guide to NCI-developed radiation dosimetry software for CT,
-            nuclear medicine, and radiography/fluoroscopy research and licensed
-            vendor integration.
+            Technical documentation and user-support resources for NCI-developed
+            radiation dosimetry software. The official NCI/DCEG page remains the
+            authoritative institutional source for access policy.
           </motion.p>
 
           <motion.div
@@ -56,8 +56,8 @@ export const Hero = () => {
             className="mx-auto flex max-w-2xl flex-wrap justify-center gap-2 text-xs"
           >
             {[
-              { label: "Official access", href: portalLinks.officialNci },
-              { label: "Technical docs", href: portalLinks.github },
+              { label: "Official NCI source", href: portalLinks.officialNci },
+              { label: "Documentation portal", href: portalLinks.github },
               { label: "Approved-user updates", href: portalLinks.googleGroup },
             ].map((link) => (
               <a

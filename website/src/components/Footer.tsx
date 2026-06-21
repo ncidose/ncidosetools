@@ -32,8 +32,8 @@ export const Footer = () => {
               </span>
             </div>
             <p className="text-sm text-muted-foreground">
-              Public information hub for NCI-developed radiation dosimetry tools,
-              research access, and licensed vendor integration.
+              Documentation and user-support resources for NCI-developed radiation
+              dosimetry tools.
             </p>
           </div>
 
@@ -70,6 +70,16 @@ export const Footer = () => {
               </ul>
             </div>
           ))}
+        </div>
+
+        <div className="mt-12 border-t border-border pt-6">
+          <p className="max-w-4xl text-xs leading-relaxed text-muted-foreground">
+            This GitHub Pages site provides technical documentation and user-support
+            information for NCI Dose Tools. The official NCI/DCEG information page
+            should be used as the authoritative institutional source. Access to
+            software is restricted to approved users under the applicable Software
+            Transfer Agreement or commercial licensing agreement.
+          </p>
         </div>
 
         {/* Bottom bar */}

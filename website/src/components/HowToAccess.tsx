@@ -109,7 +109,8 @@ export const HowToAccess = () => {
 
                   <div className="space-y-1 mb-3">
                     <p className="text-sm font-medium text-slate-900">Dr. Choonsik Lee</p>
-                    <p className="text-xs text-slate-500">Lead Developer</p>
+                    <p className="text-xs text-slate-500">NCI Dose Tools Scientific Lead</p>
+                    <p className="text-xs text-slate-500">Radiation Epidemiology Branch, DCEG, NCI</p>
                   </div>
 
 
@@ -148,8 +149,9 @@ export const HowToAccess = () => {
 
               <div className="p-6">
                 <p className="text-sm text-slate-600 leading-relaxed mb-6">
-                  Commercial use of NCI dose tools requires a licensing agreement through the
-                  NCI Technology Transfer Center.
+                  Commercial use, product integration, or vendor evaluation requires review
+                  through the NCI Technology Transfer Center and an appropriate licensing
+                  agreement.
                 </p>
 
                 {/* Options */}

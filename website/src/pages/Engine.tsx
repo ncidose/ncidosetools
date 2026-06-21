@@ -32,9 +32,9 @@ const apiHighlights = [
   },
   {
     icon: TestTube2,
-    title: "Free trial available",
+    title: "Evaluation requires review",
     description:
-      "A free vendor trial/evaluation route is available so teams can test technical fit and customer value before deeper integration.",
+      "Vendor evaluation, product integration, and commercial use require review through the NCI Technology Transfer Center.",
   },
 ];
 
@@ -55,13 +55,13 @@ const strengths = [
     icon: ShieldCheck,
     title: "REST API-ready vendor pathway",
     description:
-      "Trial evaluation support makes the tools practical to test before a commercial integration decision.",
+      "REST API materials support technical review before any approved commercial integration or licensing decision.",
   },
   {
     icon: ScrollText,
     title: "Research-validated and documented",
     description:
-      "A maintained GitHub technical portal and a growing publication registry provide visible scientific credibility.",
+      "A maintained documentation portal and a growing publication registry provide technical and scientific context.",
   },
 ];
 
@@ -187,11 +187,11 @@ const Engine = () => {
                 <span className="text-muted-foreground">Reference Dosimetry</span>
               </h1>
               <p className="mt-6 max-w-3xl text-lg text-muted-foreground">
-                NCI Dose Tools can help vendors add scientifically grounded organ
-                dose estimation to commercial platforms. REST API integration can
-                be evaluated through web-based or local REST API server deployments:
-                test the fit, validate the workflow, then move toward an approved
-                commercial license.
+                NCI Dose Tools provide scientifically grounded organ dose estimation
+                methods that may be evaluated for product integration. Commercial
+                use, product integration, or vendor evaluation requires review
+                through the NCI Technology Transfer Center and an appropriate
+                licensing agreement.
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <a href="mailto:kevin.chang@nih.gov" className="btn-precision">
@@ -218,13 +218,13 @@ const Engine = () => {
                   REST API Integration
                 </span>
                 <h2 className="mt-4 text-section-md lg:text-section">
-                  Built for vendor-side integration
+                  Technical review for vendor-side integration
                 </h2>
                 <p className="mt-5 text-muted-foreground">
                   For vendors, the central question is not only whether dose
-                  estimates are scientifically credible, but whether they can be
-                  integrated into a real product. The NCI Dose Tools vendor path
-                  supports REST-style request and response workflows through
+                  estimates are scientifically credible, but whether the technical
+                  workflow is appropriate for an approved product-integration path.
+                  REST-style request and response workflows can be reviewed through
                   web-based services or local REST API servers, depending on the
                   evaluation and deployment environment.
                 </p>
@@ -280,7 +280,7 @@ const Engine = () => {
               <p className="mt-5 text-muted-foreground">
                 The core advantage is not only one calculator. It is an
                 NCI-developed CT/RF/NM dosimetry ecosystem with reference
-                phantoms, REST API pathways, and open technical documentation.
+                phantoms, REST API pathways, and public technical documentation.
               </p>
             </motion.div>
 
@@ -323,10 +323,10 @@ const Engine = () => {
                 Components vendors can evaluate
               </h2>
               <p className="mx-auto mt-5 max-w-3xl text-muted-foreground">
-                Vendor evaluation focuses on the REST API-accessible versions of these
-                components. Each component summary outlines the relevant dose-tool
-                capability, while published REST API user manuals document
-                integration workflows that can fit into commercial products.
+                Vendor evaluation and product integration require review through
+                the NCI Technology Transfer Center. These component summaries
+                outline relevant dose-tool capabilities, while published REST API
+                user manuals document technical workflows that can support review.
                 Vendors interested in GUI-oriented overviews can visit{" "}
                 <Link to="/tools" className="text-primary hover:underline">
                   Our Tools
@@ -418,9 +418,9 @@ const Engine = () => {
               >
                 <div className="space-y-6">
                   {[
-                    "Start with a REST API trial/evaluation to test technical fit in your product workflow.",
+                    "Start by discussing whether a REST API evaluation is appropriate for the proposed product workflow.",
                     "Discuss which dose-tool components match your product roadmap and customer base.",
-                    "Move from evaluation to commercial integration through an NCI Technology Transfer Center licensing agreement.",
+                    "Move from evaluation to commercial integration only through an NCI Technology Transfer Center licensing agreement.",
                   ].map((step, index) => (
                     <div key={step} className="flex items-start gap-4">
                       <span className="flex h-8 w-8 flex-shrink-0 items-center justify-center border border-primary font-mono text-sm text-primary">

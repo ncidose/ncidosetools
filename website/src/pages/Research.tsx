@@ -17,11 +17,11 @@ import {
 const portalCards = [
   {
     icon: Globe2,
-    eyebrow: "Public Orientation",
-    title: "ncidosetools.com",
+    eyebrow: "Documentation Portal",
+    title: "NCI Dose Tools Documentation Portal",
     description:
-      "A readable front door for the NCI Dose Tools ecosystem. This site explains what the tools do, who they are for, and where different users should go next.",
-    href: "https://ncidosetools.com",
+      "Technical documentation and user-support resources for NCI Dose Tools, including tool summaries, manuals, API resources, FAQs, and update-oriented materials.",
+    href: "https://ncidosimetry.github.io/ncidosetools/",
     linkText: "Current site",
   },
   {
@@ -35,10 +35,10 @@ const portalCards = [
   },
   {
     icon: BookOpen,
-    eyebrow: "Technical Portal",
+    eyebrow: "Repository",
     title: "GitHub: ncidosimetry/ncidosetools",
     description:
-      "The technical home for manuals, release information, version history, Q&A, REST API resources, and implementation-oriented documentation.",
+      "The source repository for documentation content, release information, version history, Q&A, REST API resources, and implementation-oriented materials.",
     href: portalLinks.github,
     linkText: "Open GitHub",
   },
@@ -70,14 +70,14 @@ const userPaths = [
   },
   {
     title: "Commercial vendor",
-    text: "Review the vendor overview, then contact the NCI Technology Transfer Center for licensing.",
+    text: "Commercial use, product integration, or vendor evaluation requires review through the NCI Technology Transfer Center and an appropriate licensing agreement.",
     href: "/vendors",
     linkText: "Vendor integration path",
     external: false,
   },
   {
     title: "Technical implementer",
-    text: "Use GitHub for manuals, release notes, technical questions, version history, and REST API-oriented details.",
+    text: "Use the documentation portal and GitHub repository for manuals, release notes, technical questions, version history, and REST API-oriented details.",
     href: portalLinks.github,
     linkText: "Open GitHub portal",
     external: true,
@@ -102,13 +102,14 @@ const Research = () => {
                 Links & Resources
               </span>
               <h1 className="mt-4 text-hero-md lg:text-hero">
-                Three Portals,
-                <span className="block text-muted-foreground">One Public Front Door</span>
+                Documentation Portal,
+                <span className="block text-muted-foreground">Official Source, Approved Access</span>
               </h1>
               <p className="mt-6 max-w-3xl text-lg text-muted-foreground">
-                The official NCI page, GitHub technical portal, and approved-user
-                file repository each serve a different purpose. This site explains
-                the ecosystem in a more public, readable, and update-friendly way.
+                The official NCI/DCEG page, this GitHub Pages documentation portal,
+                and the approved-user file repository each serve a different purpose.
+                This site supports documentation and user support while keeping the
+                DCEG page as the authoritative institutional source.
               </p>
             </motion.div>
           </div>
@@ -224,10 +225,11 @@ const Research = () => {
                   What this site should do
                 </h2>
                 <p className="mt-5 text-muted-foreground leading-relaxed">
-                  This website should be easier to update than the official NCI
-                  page and less technical than GitHub. Its role is to explain,
-                  orient, announce, and route visitors to the correct official or
-                  technical channel.
+                  This documentation portal should be easier to update than the
+                  official NCI page and more user-oriented than repository issue
+                  threads. Its role is to explain, orient, announce, and route
+                  visitors to the correct official, technical, or approved-access
+                  channel.
                 </p>
               </motion.div>
 
@@ -240,9 +242,9 @@ const Research = () => {
               >
                 {[
                   "Keep public summaries current when tool capabilities, access routes, or documentation locations change.",
-                  "Avoid duplicating official policy language that belongs on NCI/DCEG pages.",
+                  "Keep DCEG/cancer.gov as the authoritative institutional source for official context and access policy.",
                   "Avoid burying new visitors in issue threads, release tags, or implementation details.",
-                  "Send approved users to GitHub and the controlled group when they need files, manuals, or technical support.",
+                  "Send approved users to the controlled group when they need restricted files, and to GitHub for documentation and technical support.",
                 ].map((item) => (
                   <div key={item} className="flex gap-4 border border-border bg-white p-4">
                     <ArrowRight className="mt-0.5 h-4 w-4 flex-shrink-0 text-primary" />

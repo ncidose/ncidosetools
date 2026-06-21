@@ -19,8 +19,8 @@ const audiences = [
     accent: "from-indigo-500/20 to-transparent",
     items: [
       "Dose monitoring and analytics platforms that want organ-dose estimates beyond summary exposure indicators",
-      "Commercial teams evaluating CT, nuclear medicine, and radiography/fluoroscopy coverage",
-      "Vendors seeking a scientifically defensible dose layer through an approved NCI licensing pathway",
+      "Commercial teams evaluating CT, nuclear medicine, and radiography/fluoroscopy coverage through the appropriate NCI review path",
+      "Vendors seeking technical information before an approved NCI licensing pathway",
       "Product teams that need credible documentation, version history, and support routes for customers",
     ],
   },
