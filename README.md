@@ -12,11 +12,6 @@ The NCI Dose Tools Documentation Portal is published at:
 
 https://ncidose.github.io/
 
-The live portal source is maintained in the separate
-[`ncidose/ncidose.github.io`](https://github.com/ncidose/ncidose.github.io)
-repository. The legacy [`website/`](website) folder in this repository is kept
-for historical reference only.
-
 ---
 
 ## Software Access
