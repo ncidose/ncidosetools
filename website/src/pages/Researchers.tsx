@@ -304,7 +304,7 @@ const Researchers = () => {
                       User manuals, and version history available for approved users
                     </p>
                     <a
-                      href="https://github.com/ncidosimetry/ncidosetools"
+                      href="https://github.com/ncidose/ncidosetools"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-primary hover:underline inline-flex items-center gap-1 font-mono text-sm"

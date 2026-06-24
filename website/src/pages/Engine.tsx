@@ -84,9 +84,9 @@ const vendorComponentIcons: Record<string, typeof Code2> = {
 };
 
 const apiManualLinks: Partial<Record<string, string>> = {
-  ncict: "https://github.com/ncidosimetry/ncidosetools/wiki/NCICTAPI-User-Manual",
-  ncirf: "https://github.com/ncidosimetry/ncidosetools/wiki/NCIRFAPI-User-Manual",
-  ncinm: "https://github.com/ncidosimetry/ncidosetools/wiki/NCINMAPI-User-Manual",
+  ncict: "https://github.com/ncidose/ncidosetools/wiki/NCICTAPI-User-Manual",
+  ncirf: "https://github.com/ncidose/ncidosetools/wiki/NCIRFAPI-User-Manual",
+  ncinm: "https://github.com/ncidose/ncidosetools/wiki/NCINMAPI-User-Manual",
 };
 
 const apiExamples = [

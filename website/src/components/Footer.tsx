@@ -13,7 +13,7 @@ export const Footer = () => {
     ],
     Resources: [
       { label: "Official NCI Resources", href: "https://dceg.cancer.gov/tools/radiation-dosimetry-tools", external: true },
-      { label: "GitHub Documentation", href: "https://github.com/ncidosimetry/ncidosetools", external: true },
+      { label: "GitHub Documentation", href: "https://github.com/ncidose/ncidosetools", external: true },
       { label: "Approved-User Updates", href: "https://groups.google.com/g/ncidose", external: true },
       { label: "Professional Updates", href: "https://www.linkedin.com/in/choonsiklee/", external: true },
     ],

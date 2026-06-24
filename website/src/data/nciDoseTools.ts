@@ -6,7 +6,7 @@ export const portalLinks = {
   officialNci: "https://dceg.cancer.gov/tools/radiation-dosimetry-tools",
   staForm:
     "https://dceg.cancer.gov/tools/radiation-dosimetry-tools/ncidose-software-transfer-agreement.pdf",
-  github: "https://github.com/ncidosimetry/ncidosetools",
+  github: "https://github.com/ncidose/ncidosetools",
   googleGroup: "https://groups.google.com/g/ncidose",
   linkedin: "https://www.linkedin.com/in/choonsiklee/",
 };
@@ -46,9 +46,9 @@ export const tools = [
     output:
       "Organ absorbed dose, effective dose, and CT-related metrics such as DLP and SSDE for epidemiologic studies, outcomes research, benchmarking, and sensitivity analysis.",
     manualHref:
-      "https://github.com/ncidosimetry/ncidosetools/wiki/NCICT-User-Manual",
+      "https://github.com/ncidose/ncidosetools/wiki/NCICT-User-Manual",
     versionHistoryHref:
-      "https://github.com/ncidosimetry/ncidosetools/tree/main/NCICT",
+      "https://github.com/ncidose/ncidosetools/tree/main/NCICT",
   },
   {
     id: "ncirf",
@@ -85,9 +85,9 @@ export const tools = [
     output:
       "Organ absorbed dose, Monte Carlo statistical error, peak skin dose, and effective dose for projection imaging studies and modality-specific dose estimation workflows.",
     manualHref:
-      "https://github.com/ncidosimetry/ncidosetools/wiki/NCIRF-User-Manual",
+      "https://github.com/ncidose/ncidosetools/wiki/NCIRF-User-Manual",
     versionHistoryHref:
-      "https://github.com/ncidosimetry/ncidosetools/tree/main/NCIRF",
+      "https://github.com/ncidose/ncidosetools/tree/main/NCIRF",
   },
   {
     id: "ncinm",
@@ -126,9 +126,9 @@ export const tools = [
     output:
       "Target-organ absorbed dose, dose per administered activity, and effective dose for supported adult and pediatric workflows, study documentation, and reproducible analysis.",
     manualHref:
-      "https://github.com/ncidosimetry/ncidosetools/wiki/NCINM-User-Manual",
+      "https://github.com/ncidose/ncidosetools/wiki/NCINM-User-Manual",
     versionHistoryHref:
-      "https://github.com/ncidosimetry/ncidosetools/tree/main/NCINM",
+      "https://github.com/ncidose/ncidosetools/tree/main/NCINM",
   },
   {
     id: "phantom",
@@ -165,9 +165,9 @@ export const tools = [
     output:
       "The phantom libraries make cross-modality dose estimates more consistent by anchoring CT, NM, and RF tools to the same reference-grade anatomical foundation.",
     manualHref:
-      "https://github.com/ncidosimetry/ncidosetools/wiki/PHANTOM-User-Manual",
+      "https://github.com/ncidose/ncidosetools/wiki/PHANTOM-User-Manual",
     versionHistoryHref:
-      "https://github.com/ncidosimetry/ncidosetools/tree/main/PHANTOM",
+      "https://github.com/ncidose/ncidosetools/tree/main/PHANTOM",
   },
 ];
 
