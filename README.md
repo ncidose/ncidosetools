@@ -2,23 +2,17 @@
 
 NCI Dose Tools are a suite of radiation dose estimation software tools developed at the National Cancer Institute (NCI) for CT, nuclear medicine, and radiography/fluoroscopy procedures. They support standardized organ dose assessment using computational phantoms and precomputed dose libraries for research use and licensed vendor integration.
 
-This repository is maintained by the NCI Dose Team and provides technical documentation, user support, release information, and API resources for NCICT, NCINM, and NCIRF. The official NCI/DCEG information page should be used as the authoritative institutional source.
-
 ---
 
-## Documentation Portal
+## NCI Dose Web Resources
 
-The NCI Dose Tools Documentation Portal is published at:
+NCI Dose web resources are organized across four companion sites:
 
-https://ncidose.github.io/
+- [Official NCI Source](https://dceg.cancer.gov/tools/radiation-dosimetry-tools): authoritative institutional information and access policy.
+- [Documentation Portal](https://ncidose.github.io/): public documentation, tool summaries, manuals, FAQs, and user-support resources.
+- [GitHub Repository](https://github.com/ncidose/ncidosetools): maintained by the NCI Dose Team with technical documentation, user support, release information, version history, Q&A, REST API resources, and implementation-oriented materials for NCICT, NCINM, and NCIRF.
+- [Google Group + Drive Repository](https://groups.google.com/g/ncidose): approved-user channel for release announcements and controlled file distribution.
 
-**Current site: REPOSITORY**
-
-NCI Dose web resources are organized across four companion sites: the
-[Documentation Portal](https://ncidose.github.io/), the
-[Official NCI Source](https://dceg.cancer.gov/tools/radiation-dosimetry-tools),
-this [GitHub Repository](https://github.com/ncidose/ncidosetools), and the
-[Approved Users Google Group + Drive Repository](https://groups.google.com/g/ncidose).
 See the [Links & Resources](https://ncidose.github.io/#/resources) page for the
 full routing guide.
 
