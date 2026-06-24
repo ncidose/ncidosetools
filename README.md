@@ -12,6 +12,16 @@ The NCI Dose Tools Documentation Portal is published at:
 
 https://ncidose.github.io/
 
+**Current site: REPOSITORY**
+
+NCI Dose web resources are organized across four companion sites: the
+[Documentation Portal](https://ncidose.github.io/), the
+[Official NCI Source](https://dceg.cancer.gov/tools/radiation-dosimetry-tools),
+this [GitHub Repository](https://github.com/ncidose/ncidosetools), and the
+[Approved Users Google Group + Drive Repository](https://groups.google.com/g/ncidose).
+See the [Links & Resources](https://ncidose.github.io/#/resources) page for the
+full routing guide.
+
 ---
 
 ## Software Access
