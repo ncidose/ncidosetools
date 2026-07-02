@@ -16,39 +16,49 @@ Unlicensed access or redistribution is not permitted.
 
 ### Download Folder Organization
 
-- **niigz/**
-  Compressed NIfTI (`.nii.gz`) voxel phantom files. The current NIfTI release includes:
-  - `nci_reference_arm_highres`
-  - `nci_pregnant_arm_highres`
-  - `nci_size_arm_highres`
-  - `nci_size_arm_lowres`
-  - `nci_size_armless_highres`
-  - `nci_size_armless_lowres`
+The download folder is organized by **phantom library first**, then by **posture/resolution**, then by **file format**:
 
-- **dicomrt/**
-  DICOM-RT datasets for supported reference, pregnant, and ICRP phantom libraries.
+- **nci_size/**
+  Body size–dependent phantom library:
+  - `arm_highres/niigz`
+  - `arm_lowres/{bin, niigz}`
+  - `armless_highres/niigz`
+  - `armless_lowres/{bin, niigz}`
+  - `armless_xylow_zhigh/niigz` — xy-plane at low resolution, z-axis at high resolution
 
-- **mc-input/**
-  Monte Carlo input files for selected phantom libraries. See **Monte Carlo Input Files** below.
+- **nci_reference/**
+  Reference-size phantom library:
+  - `arm_highres/{bin, niigz, mc-input}`
+  - `armless_highres/{bin, dicomrt}`
 
-- **_archive/**
-  Legacy binary voxel files and superseded release files retained for compatibility
-  with previous workflows. Binary files were moved to `_archive` because NIfTI is now
-  the recommended distribution format for voxel phantoms.
+- **nci_pregnant/**
+  Pregnant woman phantom library:
+  - `arm_highres/{niigz, dicomrt}`
+
+- **icrp_reference/**
+  ICRP reference phantom library:
+  - `armless_highres/{dicomrt, mc-input}`
 
 - **_mastertable_ref&size.xlsx**
   Master data table for the NCI reference and body size–dependent phantom library.
 
+Within each posture/resolution folder, the following format subfolders may appear:
+
+- **bin/** — legacy raw binary voxel files, retained for compatibility with existing workflows
+- **niigz/** — compressed NIfTI (`.nii.gz`) voxel phantom files (recommended format)
+- **dicomrt/** — DICOM-RT datasets (DICOM CT and RT STRUCTURE)
+- **mc-input/** — Monte Carlo input files, code-specific. See **Monte Carlo Input Files** below.
+
 ### Monte Carlo Input Files
 
-The **mc-input/** folder contains code-specific Monte Carlo input files for selected
-phantom libraries:
+Monte Carlo input folders use code-specific names rather than the voxel-library
+naming pattern:
 
-- **mc-input/mcnp-nci-reference-arm/**
+- **nci_reference/arm_highres/mc-input/mcnp-nci-reference-arm/**
   MCNP input decks for the NCI reference-size phantoms with arms. The folder includes
   12 numbered input files (`01`–`12`) and 12 corresponding lattice files (`*.lat`).
 
-- **mc-input/geant4-icrp-noarm/**
+- **icrp_reference/armless_highres/mc-input/geant4-icrp-noarm/**
   Geant4 input package for ICRP reference phantoms without arms. The folder includes
   `Ref_noa_icrp_bin_G4.tar.gz`.
 
@@ -57,43 +67,37 @@ path, source, scoring, compiler, or code-version adjustments before use.
 
 ### Folder Naming Convention
 
-The download folder uses a top-level category folder first, followed by
-library-specific subfolders:
+The download folder uses a phantom-library folder first, then a posture/resolution
+subfolder, then a format subfolder:
 
-- **niigz/III_SSS_AAA_RRR**
-  Compressed NIfTI (`.nii.gz`) folders, such as `niigz/nci_reference_arm_highres`.
+**III_SSS/AAA_RRR/format**
 
-- **dicomrt/III_SSS_AAA_dicomrt_RRR**
-  DICOMRT folders, such as `dicomrt/nci_reference_armless_dicomrt_highres`.
+- **III_SSS**: phantom library — one of `nci_size`, `nci_reference`, `nci_pregnant`,
+  `icrp_reference`
+- **AAA_RRR**: arm posture and voxel resolution, e.g. `arm_highres`, `armless_lowres`,
+  `armless_xylow_zhigh`
+- **format**: one of `bin`, `niigz`, `dicomrt`, `mc-input`
 
-- **_archive/III_SSS_AAA_binary_RRR**
-  Archived legacy binary folders, such as `_archive/nci_reference_armed_binary_highres`.
+Examples: `nci_size/armless_lowres/niigz`, `nci_reference/arm_highres/bin`,
+`icrp_reference/armless_highres/dicomrt`.
 
-- **mc-input/**
-  Monte Carlo input folders use code-specific names, such as
-  `mcnp-nci-reference-arm` and `geant4-icrp-noarm`.
-
-Naming fields:
-
-- **III**: `nci` or `icrp`
-- **SSS**: `reference`, `size`, or `pregnant`
-- **AAA**: arm posture. NIfTI folders use `arm` or `armless`; DICOMRT and archived
-  binary folders use `armed` or `armless` where applicable.
-- **RRR**: `highres` or `lowres`
+Not every posture/resolution folder includes every format — see **Download Folder
+Organization** above for what is available per library.
 
 ### Available Phantom Libraries
 
 | Institution | Size      | Arm Posture | Format   | Resolution |
 |------------|-----------|-------------|----------|------------|
-| nci  | reference | arm     | binary (archive) | high |
-| nci  | reference | armless | binary (archive) | high |
-| nci  | size-dependent | arm | binary (archive) | low<sup>*</sup>|
-| nci  | size-dependent | armless | binary (archive) | low<sup>*</sup>|
+| nci  | reference | arm     | binary | high |
+| nci  | reference | armless | binary | high |
+| nci  | size-dependent | arm | binary | low |
+| nci  | size-dependent | armless | binary | low |
 | nci  | reference | arm | niigz | high |
 | nci  | size-dependent | arm | niigz | high |
 | nci  | size-dependent | arm | niigz | low |
 | nci  | size-dependent | armless | niigz | high |
 | nci  | size-dependent | armless | niigz | low |
+| nci  | size-dependent | armless | niigz | xy-low / z-high |
 | nci  | pregnant | arm | niigz | high |
 | nci  | reference | arm | mc-input (MCNP) | high |
 | icrp | reference | armless | mc-input (Geant4) | high |
@@ -101,7 +105,9 @@ Naming fields:
 | nci  | pregnant  | arm | dicomrt | high |
 | icrp | reference | armless | dicomrt | high |
 
-<sup>*</sup> The high–voxel-resolution NCI size-dependent library is now available in compressed NIfTI (`.nii.gz`) format. Legacy binary voxel datasets have been moved to `_archive`.
+NIfTI (`.nii.gz`) is the recommended format for new downloads; raw binary voxel files
+are retained under each library's **bin/** folder for compatibility with existing
+Monte Carlo workflows.
 
 ### Master Table
 
@@ -111,6 +117,13 @@ Naming fields:
 ---
 
 ## Version History
+
+### 2026-07-01
+- Added a new NCI size-dependent armless NIfTI dataset at **xy-low / z-high resolution** (`nci_size/armless_xylow_zhigh/niigz`, **362 phantoms**), voxelized from the source mesh library
+- Reorganized the download folder from a format-first layout (`niigz/`, `dicomrt/`, `mc-input/`, `_archive/`) to a **phantom-library-first** layout (`nci_size/`, `nci_reference/`, `nci_pregnant/`, `icrp_reference/`), with format subfolders (`bin`, `niigz`, `dicomrt`, `mc-input`) nested under each posture/resolution folder; the `_archive` folder no longer exists as a separate top-level category
+- Unified the smallest neonate phantom identifiers to **00f050005** / **00m050005** across the master table and all size-dependent libraries (previously inconsistently labeled **00f051004** / **00m051004** in some size-dependent tables)
+- Corrected a voxel-count error in the **arm_lowres** and **armless_lowres** libraries for phantoms 00f050005/00m050005, where the z-axis voxel count had not been recomputed for low resolution, resulting in an incorrect (doubled) phantom height; both libraries were revoxelized at the correct low-resolution spacing
+- Filled in previously missing **bin** files for 00f050005/00m050005 in `nci_size/arm_highres` and `nci_size/arm_lowres`
 
 ### 2026-05-31
 - Added compressed NIfTI (`.nii.gz`) versions of the NCI reference-size, size-dependent, and pregnant phantom libraries
@@ -146,9 +159,9 @@ Naming fields:
 - Added 11 phantoms to the size-specific phantom library  
   *(total size-specific library now **n = 362**)*
 
-00f051004.3dm
+00f050005.3dm
 00f065005.3dm
-00m051004.3dm
+00m050005.3dm
 00m065005.3dm
 01f065010.3dm
 01f075010.3dm
